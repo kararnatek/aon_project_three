@@ -2,7 +2,7 @@
 import 'package:first_project/contentPage.dart';
 import 'package:first_project/listPage.dart';
 import 'package:first_project/loginPage.dart';
-import 'package:first_project/shopPage.dart';
+import 'package:first_project/api/shopPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -14,7 +14,7 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  List<Widget>pages = [ContentPage(),Shoppage(),Listpage(),ContentPage()];
+  List<Widget>pages = [LikePage(),Listpage(),LikePage()];
   int _selectedIndex = 0;
   void _onItemTapped(int index) {
     setState(() {
@@ -51,12 +51,12 @@ bottomNavigationBar: BottomNavigationBar(
       label: 'حسابي',
     ),
     BottomNavigationBarItem(
-      icon: Icon(Icons.menu),
-      label: 'القائمة',
+      icon: Icon(Icons.search),
+      label: 'البحث',
     ),
     BottomNavigationBarItem(
-      icon: Icon(Icons.menu),
-      label: 'القائمة',
+      icon: Icon(Icons.shopping_cart),
+      label: 'للسلة',
     ),
     BottomNavigationBarItem(
       icon: Icon(Icons.menu),

@@ -1,19 +1,44 @@
+import 'package:first_project/mainPage.dart';
 import 'package:flutter/material.dart';
 
-class ContentPage extends StatefulWidget {
-  const ContentPage({super.key});
+class LikePage extends StatefulWidget {
+  const LikePage({super.key});
 
   @override
-  State<ContentPage> createState() => _ContentPageState();
+  State<LikePage> createState() => _LikePageState();
 }
 
-class _ContentPageState extends State<ContentPage> {
+class _LikePageState extends State<LikePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Row(
+      appBar: AppBar(),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset("Myimage/AonImage.jpg")
+          Stack(
+            children: [
+              Container(
+                height: 200,
+                width: 200,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.red,
+                  image: DecorationImage(
+                      image: AssetImage("Myimage/main.jpg"), fit: BoxFit.cover),
+                ),
+              ),
+              Positioned(
+                  top: 40,
+                  right: 20,
+                  child: Icon(
+                    Icons.favorite,
+                    size: 40,
+                    color: Colors.red,
+                  ))
+            ],
+          )
         ],
       ),
     );
